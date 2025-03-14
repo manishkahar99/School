@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaya Bageshwori Secondary School</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5dc;
+        }
+        header {
+            background: maroon;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #d4af37;
+            padding: 10px;
+        }
+        nav a {
+            color: maroon;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .fade-in {
+            animation: fadeIn 2s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.5s ease-in-out;
+        }
+        .scroll-animation.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        img {
+            width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header class="fade-in">Jaya Bageshwori Secondary School</header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <div id="home" class="content scroll-animation">
+            <h2>Welcome to Jaya Bageshwori Secondary School</h2>
+            <img src="JB.jpg" alt="School Building">
+            <p>Providing quality education since 1981. A place for holistic development.</p>
+        </div>
+        <div id="about" class="content scroll-animation">
+            <h2>About Our School</h2>
+            <p>Jaya Bageshwori Secondary School is ISO certified and known for academic excellence.</p>
+        </div>
+        <div id="facilities" class="content scroll-animation">
+            <h2>Our Facilities</h2>
+            <ul>
+                <li>Well-equipped classrooms</li>
+                <li>Library and computer labs</li>
+                <li>Sports and extracurricular activities</li>
+            </ul>
+            <img src="FAC.jpg" alt="School Headmaster">
+        </div>
+        <div id="contact" class="content scroll-animation">
+            <h2>Contact Us</h2>
+            <img src="HEAD.jpg" alt="School Admission Info">
+            <p>Email: info@jayabageshworischool.com</p>
+            <p>Phone: +977-9825514687</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("scroll", function() {
+            let elements = document.querySelectorAll(".scroll-animation");
+            elements.forEach(el => {
+                let position = el.getBoundingClientRect().top;
+                if (position < window.innerHeight - 50) {
+                    el.classList.add("visible");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
